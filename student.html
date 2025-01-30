@@ -186,14 +186,12 @@
                 <h1 class="student-name"></h1>
                 <div class="student-year"></div>
                 <div class="student-description">
-                    <!-- Description will be dynamically added -->
                 </div>
             </div>
         </div>
         <div class="right-panel">
             <div class="scroll-note">(scroll down and up to view)</div>
             <div class="image-grid">
-                <!-- Images will be dynamically added -->
             </div>
         </div>
     </div>
@@ -201,17 +199,17 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script>
-        // Get URL parameters
+        // url parametrar dras har
         const urlParams = new URLSearchParams(window.location.search);
         const studentName = urlParams.get('name');
         const studentYear = urlParams.get('year');
         const images = JSON.parse(decodeURIComponent(urlParams.get('images')));
 
-        // Update student info
+        // autoupdatera info baserat på namn
         document.querySelector('.student-name').textContent = studentName;
         document.querySelector('.student-year').textContent = `${studentYear} Year Student`;
         
-        // Create image grid
+        // dyn bildgridd från sidan
         const imageGrid = document.querySelector('.image-grid');
         images.forEach(imagePath => {
             const container = document.createElement('div');
@@ -220,7 +218,7 @@
             imageGrid.appendChild(container);
         });
 
-        // Animations
+        // animationer
         gsap.from('.student-info', {
             opacity: 0,
             y: 20,
