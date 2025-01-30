@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerrit Rietveld Academie: GRA OPEN DAY</title>
+    <style>
+
+@font-face {
+    font-family: 'quik';
+    src: url('quik.woff2') format('woff2'),
+        url('quik.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'avid (test ver. 3)';
+    src: url('avidtestver3.woff2') format('woff2'),
+        url('avidtestver3.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BT-ABM Black Extended';
+    src: url('BT-ABM-BlackExtended.woff2') format('woff2'),
+        url('BT-ABM-BlackExtended.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BT-ABM Extended Backslanted';
+    src: url('BT-ABM-ExtendedRegularBackslanted.woff2') format('woff2'),
+        url('BT-ABM-ExtendedRegularBackslanted.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+  
+@font-face {
+    font-family: 'AnnonceW01';
+    src: url('AnnonceW01-Regular.woff2') format('woff2'),
+        url('AnnonceW01-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+        
+        @font-face {
+            font-family: 'Rauchwaren';
+            src: url('fonts/Rauchwaren-Regular.woff2') format('woff2');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rauchwaren', serif;
+            background:whitesmoke;
+            color: black;
+            padding: 2rem;
+            box-shadow: inset 0.25vw 0vh 2vw 0vh grey;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-family: 'AnnonceW01';
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: normal;
+            color: rgb(0, 0, 0);
+        }
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border: none;
+            cursor: pointer;
+            border: 2pt rgb(0, 0, 0) dotted;
+            background: none;
+            font-size: 1rem;
+            font-family: 'Rauchwaren', serif;
+        }
+
+        .filter-btn.active {
+            background: inherit;
+            color: black;
+            border-radius: 2vw;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            opacity: 0;
+        }
+
+        .grid-item {
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .item-info {
+            padding: 1rem 0;
+        }
+
+        .student-name {
+            font-family: 'AnnonceW01';
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+            color: black;
+            text-decoration: none;
+        }
+
+        .year {
+            font-family: 'Rauchwaren', serif;
+            font-size: 0.9rem;
+            color: black;
+        }
+
+        .grid-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .student-list {
+            columns: 3;
+            column-gap: 2rem;
+            margin-bottom: 2rem;
+            padding: 0;
+        }
+
+        .student-list ul {
+            break-inside: avoid;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .student-list h2 {
+            font-family: 'AnnonceW01';
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            font-weight: normal;
+            break-inside: avoid;
+        }
+
+        .student-list li {
+            font-family: 'Rauchwaren', serif;
+            margin-bottom: 0.5rem;
+            break-inside: avoid;
+            cursor: pointer;
+        }
+
+        .student-list li:hover {
+            color: inherit;
+        }
+
+        .department-note {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .department-note span {
+            display: inline;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>GRAPHIC DESIGN DEPARTMENT</h1>
+        <p style="text-align: justified; text-align-last: center; width: 100%;">Here you'll find contributions from students within the department, a selection of their assignments from<br>
+            the various classes in design, typography, image and theory done from the first year throughout the third year.<br><br></p>
+        </p>
+        <div class="department-note">
+            <u style="text-decoration: dotted 2pt overline; padding-bottom: 0.25vh;">A NOTE ON OUR DEPARTMENT</u>
+            <br><br>
+            <div class="randomized-text" style="font-size: 1.4rem">
+            Graphic design shapes the way we experience our surroundings and plays a vital role in everyday life. In our Graphic Design department, students explore how to communicate visually through typography, image creation, design theory and writing. We provide the tools to turn ideas into tangible forms, blending analogue and digital techniques with a focus on content and context. Students develop their skills through hands-on assignments, independent projects and real-world opportunities.
+            </div>
+        </div>
+
+        <sup style="text-decoration: dotted 2pt overline; width: 100%; text-align: center;">type contributions by Alec Baldin and Özgür Deniz Koldaş</sup>
+
+        <ol class="student-list">
+            <ul class="sl-first-year">
+                <h2>1st Year Students</h2>
+                <li>Cisca Bakema</li>
+                <li>Sabin Deladerriere</li>
+                <li>Ausra Kaminskaite</li>
+                <li>Cassiani Kastoris</li>
+                <li>Ji Young Kwon</li>
+                <li>Andie Lee</li>
+                <li>Taedong Noh</li>
+                <li>Hyunwoo Park</li>
+                <li>Emma Reim</li>
+                <li>Konrad Urbanski</li>
+                <li>Nastia Vedeniapina</li>
+            </ul>
+            <ul class="sl-second-year">
+                <h2>2nd Year Students</h2>
+                <li>Anja Aurand</li>
+                <li>Astrid Bjorken</li>
+                <li>Ivo Blackwood</li>
+                <li>Juliette Collins</li>
+                <li>Mikolas Dvorak</li>
+                <li>Eva Fiume</li>
+                <li>Julius Geyer</li>
+                <li>Jorge Maria Herrero Alberquilla</li>
+                <li>Velko Kalchev</li>
+                <li>Ivy Karunadasa</li>
+                <li>Arina Kovalchuk</li>
+                <li>Manu Linder</li>
+                <li>Leonie Rolser</li>
+                <li>Samra Roseboom</li>
+                <li>Nim Smit</li>
+                <li>Matija Stojanovic</li>
+                <li>Loren Xu</li>
+                <li>Alberto Ziero Tesser</li>
+            </ul>
+            <ul class="sl-third-year">
+                <h2>Graduating 3rd Year Students</h2>
+                <li>Parsa Adibi</li>
+                <li>Anne Julie Andersen</li>
+                <li>Alexandra Anguelovskaia</li>
+                <li>Eliot Axelsson</li>
+                <li>Alec Baldin</li>
+                <li>Alva Bucking</li>
+                <li>Hagar Cohen</li>
+                <li>Miguel Da Silva Domingues</li>
+                <li>Esmee Desjardin</li>
+                <li>Chloe Gourvennec</li>
+                <li>Mingyu Jia</li>
+                <li>Kadri-Ann Kivisild</li>
+                <li>Koza Otmar</li>
+                <li>Matthew Oxley</li>
+                <li>Yunji Song</li>
+                <li>Idun Wahlgren</li>
+            </ul>
+        </ol>
+        
+        <div class="filters">
+            <button class="filter-btn active" data-year="all">All Years</button>
+            <button class="filter-btn" data-year="1st">1st Year</button>
+            <button class="filter-btn" data-year="2nd">2nd Year</button>
+            <button class="filter-btn" data-year="3rd">3rd Year</button>
+        </div>
+
+        <div class="grid">
+            <!-- Grid items will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        function getRandomFont() {
+            const fonts = [
+                'quik',
+                'avid (test ver. 3)',
+                'BT-ABM Black Extended'
+            ];
+            return fonts[Math.floor(Math.random() * fonts.length)];
+        }
+
+        function randomizeFonts() {
+            const text = document.querySelector('.randomized-text');
+            const content = text.textContent;
+            text.textContent = ''; // Clear the text
+            
+            // Split the text into characters and apply random fonts
+            for (let char of content) {
+                const span = document.createElement('span');
+                span.textContent = char;
+                span.style.fontFamily = getRandomFont();
+                text.appendChild(span);
+            }
+        }
+
+        // kör typsnittets slumpmässighet vid laddning
+        document.addEventListener('DOMContentLoaded', randomizeFonts);
+
+        function getRandomStyle() {
+            const borderStyles = ['dotted', 'dashed', 'double'];
+            const colors = ['forestgreen', 'royalblue', '#FF4D7F']; // #FF4D7F is 50% magenta, 50% red
+            return {
+                style: borderStyles[Math.floor(Math.random() * borderStyles.length)],
+                color: colors[Math.floor(Math.random() * colors.length)]
+            };
+        }
+
+        function applyRandomStyles() {
+            // Apply to student names in list
+            document.querySelectorAll('.student-list li').forEach(li => {
+                const style = getRandomStyle();
+                li.style.borderBottom = `2px ${style.style} ${style.color}`;
+            });
+
+            // Randomize box shadow color
+            const shadowColor = getRandomStyle().color;
+            document.body.style.boxShadow = `inset 0.25vw 0vh 2vw 0vh ${shadowColor}`;
+        }
+
+        // använd slumpmässiga stilar vid laddning och var tredje sekund
+        applyRandomStyles();
+        setInterval(applyRandomStyles, 3000);
+
+        // Portfolio data
+        const portfolioData = [
+            // 1st Year
+            {
+                name: "Cisca Bakema",
+                year: "1st",
+                images: [
+                    "1st Year/Cisca_Bakema/cisca-typographysem1_1.jpg",
+                    "1st Year/Cisca_Bakema/cisca-typographysem1_2.jpg",
+                    "1st Year/Cisca_Bakema/cisca-typographysem1_3.jpg"
+                ]
+            },
+            {
+                name: "Taedong Noh",
+                year: "1st",
+                images: [
+                    "1st Year/Taedong Noh/Taedong_Chaos_Before_Gnosis.jpg",
+                    "1st Year/Taedong Noh/Taedong_Chaos_Before_Gnosis2.jpg"
+                ]
+            },
+            // 2nd Year
+            {
+                name: "Ivo Blackwood",
+                year: "2nd",
+                images: [
+                    "2nd Year/Ivo Blackwood/ahem_t_shirt.jpg",
+                    "2nd Year/Ivo Blackwood/loud_cows_choir.jpg"
+                ]
+            },
+            {
+                name: "Loren Xu",
+                year: "2nd",
+                images: [
+                    "2nd Year/Loren Xu/A.jpg",
+                    "2nd Year/Loren Xu/B.jpg",
+                    "2nd Year/Loren Xu/C.jpg"
+                ]
+            },
+            // 3rd Year
+            {
+                name: "Alec Baldin",
+                year: "3rd",
+                images: [
+                    "3rd Year/Alec Baldin/Alec Baldin-Marker-Werker-2024_1.jpg",
+                    "3rd Year/Alec Baldin/Alec Baldin-Marker-Werker-2024_2.jpg",
+                    "3rd Year/Alec Baldin/Alec Baldin-Marker-Werker-2024_3.jpg",
+                    "3rd Year/Alec Baldin/Alec Baldin-Species of Spaces and Other Places (Fascimile)-Design (Tomas)-2024_1.jpg",
+                    "3rd Year/Alec Baldin/Alec Baldin-Species of Spaces and Other Places (Fascimile)-Design (Tomas)-2024_2.jpg",
+                    "3rd Year/Alec Baldin/Alec Baldin-Species of Spaces and Other Places (Fascimile)-Design (Tomas)-2024_3.jpg"
+                ]
+            },
+            {
+                name: "Yunji Song",
+                year: "3rd",
+                images: [
+                    "3rd Year/Yunji Song/web1.jpg",
+                    "3rd Year/Yunji Song/web2.jpg",
+                    "3rd Year/Yunji Song/web3.jpg",
+                    "3rd Year/Yunji Song/web4.jpg",
+                    "3rd Year/Yunji Song/web5.jpg"
+                ]
+            }
+        ];
+
+        // initialisera animeringar
+        const grid = document.querySelector('.grid');
+        
+        function createGridItems() {
+            portfolioData.forEach(student => {
+                const firstImage = student.images[0];
+                const encodedImages = encodeURIComponent(JSON.stringify(student.images));
+                const item = document.createElement('div');
+                item.className = `grid-item ${student.year}`;
+                
+                const studentPageUrl = `student.html?name=${encodeURIComponent(student.name)}&year=${student.year}&images=${encodedImages}`;
+                
+                item.innerHTML = `
+                    <a href="${studentPageUrl}" class="grid-link">
+                        <img src="${firstImage}" alt="${student.name}'s work">
+                    </a>
+                    <div class="item-info">
+                        <div class="student-name">${student.name}</div>
+                        <div class="year">${student.year} Year</div>
+                    </div>
+                `;
+                grid.appendChild(item);
+            });
+        }
+
+        // initialisera animeringar
+        function initializeAnimations() {
+            // Initial grid fade in
+            gsap.to('.grid', {
+                opacity: 1,
+                duration: 1,
+                ease: 'power2.out'
+            });
+
+            // Stagger grid items
+            gsap.to('.grid-item', {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                stagger: {
+                    amount: 1,
+                    grid: [2, 3],
+                    from: 'top'
+                },
+                ease: 'power2.out'
+            });
+        }
+
+        // filterfunktionalitet
+        function initializeFilters() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active button
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const year = btn.dataset.year;
+                    const items = document.querySelectorAll('.grid-item');
+
+                    // Animate items
+                    items.forEach(item => {
+                        if (year === 'all' || item.classList.contains(year)) {
+                            gsap.to(item, {
+                                opacity: 1,
+                                scale: 1,
+                                duration: 0.4,
+                                ease: 'power2.out'
+                            });
+                        } else {
+                            gsap.to(item, {
+                                opacity: 0,
+                                scale: 0.8,
+                                duration: 0.4,
+                                ease: 'power2.out'
+                            });
+                        }
+                    });
+                });
+            });
+        }
+
+        // initialisera allt
+        createGridItems();
+        initializeAnimations();
+        initializeFilters();
+    </script>
+</body>
+</html>
