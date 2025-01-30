@@ -286,11 +286,10 @@
         </div>
 
         <div class="grid">
-            <!-- Grid items will be dynamically added here -->
         </div>
     </div>
 
-    <!-- Scripts -->
+    <!-- skripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script>
         function getRandomFont() {
@@ -305,9 +304,9 @@
         function randomizeFonts() {
             const text = document.querySelector('.randomized-text');
             const content = text.textContent;
-            text.textContent = ''; // Clear the text
+            text.textContent = ''; // rensa
             
-            // Split the text into characters and apply random fonts
+            // dela texten
             for (let char of content) {
                 const span = document.createElement('span');
                 span.textContent = char;
@@ -329,13 +328,13 @@
         }
 
         function applyRandomStyles() {
-            // Apply to student names in list
+            // student names in list
             document.querySelectorAll('.student-list li').forEach(li => {
                 const style = getRandomStyle();
                 li.style.borderBottom = `2px ${style.style} ${style.color}`;
             });
 
-            // Randomize box shadow color
+            // randomize box shadow color
             const shadowColor = getRandomStyle().color;
             document.body.style.boxShadow = `inset 0.25vw 0vh 2vw 0vh ${shadowColor}`;
         }
@@ -344,7 +343,7 @@
         applyRandomStyles();
         setInterval(applyRandomStyles, 3000);
 
-        // Portfolio data
+        // portf data
         const portfolioData = [
             // 1st Year
             {
@@ -448,14 +447,14 @@
 
         // initialisera animeringar
         function initializeAnimations() {
-            // Initial grid fade in
+            //  grid fade in
             gsap.to('.grid', {
                 opacity: 1,
                 duration: 1,
                 ease: 'power2.out'
             });
 
-            // Stagger grid items
+            //  grid items
             gsap.to('.grid-item', {
                 opacity: 1,
                 y: 0,
@@ -482,7 +481,7 @@
                     const year = btn.dataset.year;
                     const items = document.querySelectorAll('.grid-item');
 
-                    // Animate items
+                    // animera items
                     items.forEach(item => {
                         if (year === 'all' || item.classList.contains(year)) {
                             gsap.to(item, {
